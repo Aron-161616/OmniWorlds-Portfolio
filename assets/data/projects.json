@@ -4,6 +4,7 @@
     "title": "Test 1",
     "category": "plugin",
     "description": "Plugin de test.",
+    "icon": "assets/img/logo.png",
     "commands": ["/test1 help", "/test1 on", "/test1 off"],
     "content": ["Fonction A", "Fonction B", "Config YAML"],
     "link": "#"
@@ -13,6 +14,7 @@
     "title": "Test 2",
     "category": "addon",
     "description": "Addon de test.",
+    "icon": "assets/img/logo.png",
     "commands": ["/test2 give", "/test2 reload"],
     "content": ["Items custom", "Recettes", "Loot tables"],
     "link": "#"
@@ -22,6 +24,7 @@
     "title": "Test 3",
     "category": "model3d",
     "description": "Model 3D de test.",
+    "icon": "assets/img/logo.png",
     "commands": ["(Aucune commande)"],
     "content": ["Fichier .glb/.fbx", "Textures", "Préviews"],
     "link": "#"
