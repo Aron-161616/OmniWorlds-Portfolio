@@ -80,7 +80,7 @@ function render(list){
         <div class="cardFooter">
           Clique pour en savoir plus
         </div>
-      </article>
+      </div>
     `;
   }).join("");
 }
@@ -122,4 +122,3 @@ fetch("assets/data/projects.json")
   .catch(() => {
     cardsEl.innerHTML = `<div class="card"><p class="desc">Erreur: impossible de charger projects.json</p></div>`;
   });
-
