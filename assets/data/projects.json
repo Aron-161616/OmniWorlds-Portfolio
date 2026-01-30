@@ -1,32 +1,32 @@
 [
   {
-    "id": "test1",
-    "title": "Test 1",
+    "id": "omnispawn",
+    "title": "OmniSpawn",
     "category": "plugin",
-    "description": "Plugin de test.",
+    "description": "Système de spawn avec téléportation",
     "icon": "assets/img/logo.png",
-    "commands": ["/test1 help", "/test1 on", "/test1 off"],
-    "content": ["Fonction A", "Fonction B", "Config YAML"],
-    "link": "#"
+    "commands": ["/spawn", "/setspawn", "/spawnon", "/spawnoff"],
+    "content": ["Téléportation au spawn", "Définir spawn (OP)", "Activer/désactiver", "Sauvegarde config.json"],
+    "link": "https://drive.google.com/drive/folders/189rar99bdymdA05nKW-g1jxShX6O2VOx"
   },
   {
-    "id": "test2",
-    "title": "Test 2",
-    "category": "addon",
-    "description": "Addon de test.",
+    "id": "omnimod",
+    "title": "OmniMod",
+    "category": "plugin",
+    "description": "Suite complète d'outils de modération",
     "icon": "assets/img/logo.png",
-    "commands": ["/test2 give", "/test2 reload"],
-    "content": ["Items custom", "Recettes", "Loot tables"],
-    "link": "#"
+    "commands": ["/sos", "/s", "/vanish", "/fly", "/invsee <joueur>", "/freeze <joueur>", "/tphere <joueur>", "/tpall", "/annonce <message>"],
+    "content": ["SOS joueurs + TP rapide", "Vanish + Night Vision", "Gestion inventaires", "Téléportations (OP)", "Freeze/speed/inspect", "Annonces serveur"],
+    "link": "https://drive.google.com/drive/folders/189rar99bdymdA05nKW-g1jxShX6O2VOx"
   },
   {
-    "id": "test3",
-    "title": "Test 3",
-    "category": "model3d",
-    "description": "Model 3D de test.",
+    "id": "omnigrade",
+    "title": "OmniGrade",
+    "category": "plugin",
+    "description": "Système de grades avec préfixes automatiques dans le chat",
     "icon": "assets/img/logo.png",
-    "commands": ["(Aucune commande)"],
-    "content": ["Fichier .glb/.fbx", "Textures", "Previews"],
-    "link": "#"
+    "commands": ["/mongrade", "/tag <joueur> add grade_joueur", "/tag <joueur> add grade_moderateur", "/tag <joueur> remove grade_joueur", "/tag <joueur> list"],
+    "content": ["Grades : Joueur / Modération", "Préfixes chat automatiques", "Addon auto-téléchargeable", "Gestion par tags Minecraft", "Sauvegarde grades.json"],
+    "link": "https://drive.google.com/drive/folders/189rar99bdymdA05nKW-g1jxShX6O2VOx"
   }
 ]
