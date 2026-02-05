@@ -1,5 +1,5 @@
 const cardsEl = document.querySelector("#cards");
-const tabs = [...document.querySelectorAll(".tab")];
+const tabs = [...document.querySelectorAll(".tab[data-filter]")];
 const searchInput = document.querySelector("#search");
 const modal = document.querySelector("#modal");
 const modalBody = document.querySelector("#modalBody");
@@ -23,7 +23,11 @@ const escapeHtml = (s) =>
     .replaceAll("'", "&#039;");
 
 function openModal(project){
+  if (!modal || !modalBody) return;
+
   const badgeClass = project.category;
+  const downloadUrl = project.download || "https://www.mediafire.com/";
+
   modalBody.innerHTML = `
     <div class="modalHeader">
       <div class="modalTitleGroup">
@@ -34,7 +38,16 @@ function openModal(project){
         </div>
       </div>
     </div>
+
     <p class="modalDesc">${escapeHtml(project.description)}</p>
+
+    <div class="block">
+      <div class="blockHeader">Download</div>
+      <div class="blockBody">
+        <a class="pill pill-accent" href="${escapeHtml(downloadUrl)}" target="_blank" rel="noreferrer">Download</a>
+        <span class="mono" style="opacity:.7;margin-left:10px">Lien externe (MediaFire)</span>
+      </div>
+    </div>
 
     <div class="block">
       <div class="blockHeader">Commandes</div>
@@ -54,10 +67,13 @@ function openModal(project){
 }
 
 function closeModal(){
+  if (!modal) return;
   modal.classList.remove("is-open");
 }
 
 function render(list){
+  if (!cardsEl) return;
+
   if (!list.length){
     cardsEl.innerHTML = `<div class="card"><p class="desc">Aucun projet ne correspond.</p></div>`;
     return;
@@ -66,7 +82,7 @@ function render(list){
   cardsEl.innerHTML = list.map(p => {
     const badgeClass = p.category;
     return `
-      <div class="card" onclick="openModal(${escapeHtml(JSON.stringify(p))})">
+      <div class="card" onclick='openModal(${JSON.stringify(p).replaceAll("'", "\\'")})'>
         <div class="cardIcon">
           <img src="${escapeHtml(p.icon)}" alt="${escapeHtml(p.title)}" />
         </div>
@@ -77,15 +93,15 @@ function render(list){
           </div>
           <span class="badge ${escapeHtml(badgeClass)}">${escapeHtml(categoryLabel(p.category))}</span>
         </div>
-        <div class="cardFooter">
-          Clique pour en savoir plus
-        </div>
+        <div class="cardFooter">Clique pour en savoir plus</div>
       </div>
     `;
   }).join("");
 }
 
 function applyFilters(){
+  if (!cardsEl || !searchInput) return;
+
   const q = (searchInput.value || "").trim().toLowerCase();
 
   const filtered = allProjects.filter(p => {
@@ -98,45 +114,59 @@ function applyFilters(){
   render(filtered);
 }
 
-tabs.forEach(btn => {
-  btn.addEventListener("click", () => {
-    tabs.forEach(b => b.classList.remove("is-active"));
-    btn.classList.add("is-active");
-    activeFilter = btn.dataset.filter;
-    applyFilters();
-  });
-});
-
-searchInput.addEventListener("input", applyFilters);
-
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) closeModal();
-});
-
-fetch("assets/data/projects.json")
-  .then(r => r.json())
-  .then(data => {
-    allProjects = data;
-    applyFilters();
-  })
-  .catch(() => {
-    cardsEl.innerHTML = `<div class="card"><p class="desc">Erreur: impossible de charger projects.json</p></div>`;
+if (tabs.length && cardsEl && searchInput) {
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabs.forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      activeFilter = btn.dataset.filter;
+      applyFilters();
+    });
   });
 
-// THEME SWITCHER
-function setTheme(theme){
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  
-  document.querySelectorAll('.pill').forEach(btn => btn.classList.remove('pill-accent'));
-  
-  if(theme === 'light'){
-    document.getElementById('themeLight').classList.add('pill-accent');
-  } else {
-    document.getElementById('themeDark').classList.add('pill-accent');
+  searchInput.addEventListener("input", applyFilters);
+
+  fetch("assets/data/projects.json")
+    .then(r => r.json())
+    .then(data => {
+      allProjects = data;
+      applyFilters();
+    })
+    .catch(() => {
+      cardsEl.innerHTML = `<div class="card"><p class="desc">Erreur: impossible de charger projects.json</p></div>`;
+    });
+}
+
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+}
+
+// THEME SWITCHER (topbar)
+function syncThemeButtons(theme) {
+  const lightTop = document.getElementById("themeLightTop");
+  const darkTop = document.getElementById("themeDarkTop");
+  if (lightTop && darkTop) {
+    lightTop.classList.toggle("is-active", theme === "light");
+    darkTop.classList.toggle("is-active", theme === "dark");
+  }
+
+  const lightPill = document.getElementById("themeLight");
+  const darkPill = document.getElementById("themeDark");
+  if (lightPill && darkPill) {
+    document.querySelectorAll(".pill").forEach(btn => btn.classList.remove("pill-accent"));
+    if (theme === "light") lightPill.classList.add("pill-accent");
+    else darkPill.classList.add("pill-accent");
   }
 }
 
+function setTheme(theme){
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  syncThemeButtons(theme);
+}
+
 // Charger le thème au démarrage (défaut = dark)
-const savedTheme = localStorage.getItem('theme') || 'dark';
+const savedTheme = localStorage.getItem("theme") || "dark";
 setTheme(savedTheme);
