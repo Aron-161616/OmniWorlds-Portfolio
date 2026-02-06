@@ -273,11 +273,11 @@ body{
 .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; }
 
 .footer{
-  margin-top: 16px;
-  margin-bottom: 40px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  border-top: 1px solid var(--border);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: none;
   display:flex;
   justify-content:space-between;
   color: var(--muted);
@@ -384,17 +384,17 @@ body{
 
 /* === PAGE D'ACCUEIL === */
 
-/* Grand logo centré avec lueur (x2) */
+/* Grand logo centré avec lueur (x2 - moins d'espace) */
 .heroLogo{
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .bigLogo{
   width: 540px;
   height: 540px;
-  margin: 0 auto 8px;
+  margin: 0 auto 4px;
   filter: drop-shadow(0 0 50px rgba(135,206,235,.6)) 
           drop-shadow(0 0 80px rgba(135,206,235,.4));
   display: inline-block;
@@ -417,8 +417,8 @@ body{
 
 /* Section Projets à la Une */
 .featuredSection{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -489,11 +489,12 @@ body{
   line-height: 1.5;
 }
 
-/* Bouton voir tous les projets */
+/* Bouton voir tous les projets - AGRANDI */
 .see-all-button{
   display:inline-block;
-  font-size:16px;
-  padding:10px 20px;
+  font-size:18px;
+  padding:14px 28px;
+  margin-top: 30px;
 }
 
 /* Panneau Discord en bas */
@@ -586,6 +587,11 @@ body{
 
   .featuredCard .desc{
     font-size: 16px;
+  }
+
+  .see-all-button{
+    font-size:16px;
+    padding:12px 24px;
   }
 
   .discordPanel{
