@@ -138,6 +138,7 @@ body{
   background: var(--panel2);
   cursor: pointer;
   transition: all .2s ease;
+  text-decoration: none;
 }
 
 .pill:hover{
@@ -272,7 +273,7 @@ body{
 .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; }
 
 .footer{
-  margin-top: 18px;
+  margin-top: 32px;
   padding-top: 14px;
   border-top: 1px solid var(--border);
   display:flex;
@@ -381,23 +382,23 @@ body{
 
 /* === PAGE D'ACCUEIL === */
 
-/* Grand logo centré avec lueur */
+/* Grand logo centré avec lueur (réduit) */
 .heroLogo{
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 60px;
 }
 
 .bigLogo{
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px;
-  border-radius: 24px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 0 60px rgba(135,206,235,.5),
-              0 0 100px rgba(135,206,235,.3);
-  border: 2px solid rgba(135,206,235,.4);
+  box-shadow: 0 0 50px rgba(135,206,235,.6),
+              0 0 80px rgba(135,206,235,.4);
+  border: 2px solid rgba(135,206,235,.5);
 }
 
 .bigLogo img{
@@ -407,16 +408,83 @@ body{
 }
 
 .bigTitle{
-  font-size: 48px;
+  font-size: 64px;
   font-weight: 900;
   margin: 0;
-  background: linear-gradient(135deg, var(--text), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
+  text-align: center;
 }
 
-/* Panneau Discord */
+/* Section Projets à la Une (style comme l'image) */
+.featuredSection{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.featuredTitle{
+  font-size: 42px;
+  font-weight: 900;
+  margin: 0 0 12px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.featuredSubtitle{
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+.featuredGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.featuredCard{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 16px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  text-align: center;
+}
+
+.featuredCard:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,.3);
+  border-color: rgba(135,206,235,.6);
+}
+
+.featuredCard .cardIcon{
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 14px;
+}
+
+.featuredCard h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.featuredCard .desc{
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Panneau Discord en bas */
 .discordPanel{
   background: var(--panel);
   border: 1px solid var(--border);
@@ -426,7 +494,8 @@ body{
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 40px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
@@ -464,49 +533,38 @@ body{
   transform: scale(1.05);
 }
 
-/* Section Projets à la Une */
-.featuredSection{
-  margin-top: 40px;
-}
+/* Responsive */
+@media (max-width: 768px){
+  .bigLogo{
+    width: 70px;
+    height: 70px;
+  }
 
-.featuredTitle{
-  font-size: 32px;
-  font-weight: 800;
-  margin: 0 0 20px;
-  text-align: center;
-}
+  .bigTitle{
+    font-size: 42px;
+  }
 
-.featuredGrid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-}
+  .featuredTitle{
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
 
-.featuredCard{
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  text-align: center;
-}
+  .featuredSubtitle{
+    font-size: 14px;
+  }
 
-.featuredCard:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0,0,0,.2);
-  border-color: rgba(135,206,235,.5);
-}
+  .featuredGrid{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 
-.featuredCard .cardIcon{
-  margin: 0 auto 12px;
-}
+  .discordPanel{
+    flex-direction: column;
+    text-align: center;
+  }
 
-.featuredCard h3{
-  margin: 0 0 8px;
-  font-size: 20px;
+  .discordButton{
+    margin-left: 0;
+    width: 100%;
+  }
 }
-
-.featuredCard .desc{
-  ma
