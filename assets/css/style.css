@@ -426,3 +426,8 @@ body {
     padding: 24px 20px !important;
   }
 }
+#products .container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  padding-left: 20px !important;
+  padding-right
