@@ -58,3 +58,23 @@ faqItems.forEach(item => {
     }
   });
 });
+
+// NAVBAR hide on scroll down / show on scroll up
+let lastScrollY = window.scrollY;
+const headerEl = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+  if (!headerEl) return;
+
+  const currentY = window.scrollY;
+
+  if (currentY > lastScrollY && currentY > 120) {
+    // scroll vers le bas
+    headerEl.classList.add('header--hidden');
+  } else {
+    // scroll vers le haut
+    headerEl.classList.remove('header--hidden');
+  }
+
+  lastScrollY = currentY;
+});
