@@ -13,7 +13,6 @@ html {
 
 
 
-
 /* ===== Fond ===== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -24,7 +23,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 
 
@@ -75,7 +73,6 @@ body {
   box-shadow: 0 16px 40px rgba(2, 6, 23, 0.9);
 }
 
-
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -93,7 +90,6 @@ body {
   font-weight: 600;
   color: #e0f2ff;
 }
-
 
 .navbar-menu {
   display: flex;
@@ -158,13 +154,11 @@ body {
     outline: none; 
 }
 
-
 .theme-btn.is-active {
     background: #3b82f6; 
     color: #ffffff;
     box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
-
 
 .theme-btn:hover:not(.is-active) {
     color: #ffffff;
@@ -260,14 +254,12 @@ body {
   width: auto;
 }
 
-
 .container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 40px;
 }
-
 
 @media (max-width: 900px) {
   .hero {
@@ -448,12 +440,10 @@ body {
               box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-
 .plugin-card.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .plugin-card:hover {
   box-shadow: 0 36px 80px rgba(15, 23, 42, 0.9);
@@ -476,7 +466,6 @@ body {
 .plugin-card {
   cursor: pointer;
 }
-
 
 .plugin-card:active {
   transform: translateY(-2px) scale(0.98);
@@ -575,7 +564,6 @@ body {
   border: 1px solid rgba(56, 189, 248, 0.7);
 }
 
-
 .plugin-modal-body {
   display: flex;
   flex-direction: column;
@@ -626,7 +614,6 @@ body {
   content: "⬇";
   font-size: 14px;
 }
-
 
 @media (max-width: 480px) {
   .plugin-modal {
@@ -876,14 +863,11 @@ body {
     position: relative; 
   }
   
-
   body::before,
   body::after {
     display: none !important;
   }
 }
-
-
 
 @media (max-width: 768px) {
 
@@ -893,14 +877,12 @@ body {
     display: none !important;
   }
   
-
   .hero-logo,
   .hero-logo-overlay,
   .hero-visual {
     display: none !important;
   }
   
-
   .hero {
     padding: 40px 0 60px !important;
   }
@@ -920,7 +902,6 @@ body {
     line-height: 1.3 !important;
   }
   
-
   .plugins-grid {
     flex-direction: column !important;
     align-items: center !important;
@@ -932,7 +913,6 @@ body {
     max-width: 360px !important;
   }
   
-
   .products-section {
     padding: 40px 0 !important;
   }
