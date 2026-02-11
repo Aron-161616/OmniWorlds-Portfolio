@@ -26,43 +26,48 @@ body {
     overflow-x: hidden;
 }
 
-/* LES LUEURS SUBTILES (nouveau) */
+/* TES LUEURS BLEU OBI (plus visibles) */
 .glow-1 {
     position: fixed;
-    top: 20vh;
-    left: 20vw;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(35, 166, 213, 0.3) 0%, transparent 60%);
+    top: 15vh;
+    left: 10vw;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, 
+        rgba(35, 166, 213, 0.6) 0%, 
+        rgba(35, 166, 213, 0.2) 40%, 
+        transparent 70%);
     border-radius: 50%;
-    filter: blur(60px);
-    z-index: -1;
-    animation: float1 20s infinite ease-in-out;
+    filter: blur(70px);
+    z-index: 1; /* Devant ! */
+    animation: float1 18s infinite ease-in-out;
 }
 
 .glow-2 {
     position: fixed;
-    bottom: 20vh;
-    right: 15vw;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(58, 134, 255, 0.25) 0%, transparent 60%);
+    bottom: 25vh;
+    right: 10vw;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, 
+        rgba(59, 130, 246, 0.5) 0%, 
+        rgba(59, 130, 246, 0.15) 40%, 
+        transparent 70%);
     border-radius: 50%;
-    filter: blur(80px);
-    z-index: -1;
-    animation: float2 25s infinite ease-in-out;
+    filter: blur(90px);
+    z-index: 1; /* Devant ! */
+    animation: float2 22s infinite ease-in-out;
 }
 
-/* Animations lentes et fluides */
 @keyframes float1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(20px, -10px) scale(1.05); }
-    66% { transform: translate(-10px, 15px) scale(0.95); }
+    0%, 100% { transform: scale(1) translate(0, 0); }
+    33% { transform: scale(1.1) translate(25px, -15px); }
+    66% { transform: scale(0.95) translate(-15px, 20px); }
 }
 
 @keyframes float2 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-15px, 20px) scale(1.1); }
+    0%, 100% { transform: scale(1) translate(0, 0); }
+    50% { transform: scale(1.15) translate(-20px, 25px); }
 }
 
 
