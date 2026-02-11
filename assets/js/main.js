@@ -78,3 +78,28 @@ window.addEventListener('scroll', () => {
 
   lastScrollY = currentY;
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".plugin-card");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  } else {
+    // Fallback vieux navigateurs : on montre tout
+    cards.forEach((card) => card.classList.add("is-visible"));
+  }
+});
