@@ -857,7 +857,7 @@ body {
 
 
 /* ===== MOBILE ===== */
-/* ===== SUPPRIME BARRES BLANCHES MOBILE ===== */
+
 html {
   height: 100%;
   overflow: hidden;
@@ -878,7 +878,7 @@ body {
     height: 100vh !important;
   }
   
-  /* Force le body à prendre toute la hauteur */
+
   body::before,
   body::after {
     display: none !important;
@@ -888,21 +888,21 @@ body {
 
 
 @media (max-width: 768px) {
-  /* ❌ CACHE NAVBAR COMPLÈTE */
+
   .header,
   .navbar,
   .navbar-container {
     display: none !important;
   }
   
-  /* ❌ CACHE HERO LOGO */
+
   .hero-logo,
   .hero-logo-overlay,
   .hero-visual {
     display: none !important;
   }
   
-  /* ✅ SIMPLIFIE HERO */
+
   .hero {
     padding: 40px 0 60px !important;
   }
@@ -922,7 +922,7 @@ body {
     line-height: 1.3 !important;
   }
   
-  /* ✅ CARDS 1 COLONNE */
+
   .plugins-grid {
     flex-direction: column !important;
     align-items: center !important;
@@ -934,7 +934,7 @@ body {
     max-width: 360px !important;
   }
   
-  /* ✅ COMPACT */
+
   .products-section {
     padding: 40px 0 !important;
   }
@@ -952,7 +952,7 @@ body {
   }
 }
 
-/* ===== MINI MOBILE (480px max) ===== */
+/* ===== MINI MOBILE  ===== */
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 24px !important;
