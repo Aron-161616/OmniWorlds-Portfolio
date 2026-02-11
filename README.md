@@ -11,12 +11,6 @@
   <a href="https://www.obidev-studios.fr/" target="_blank"><strong>→ Voir le site live</strong></a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/ObiDev/ObiDev-Studios/stargazers"><img src="https://img.shields.io/github/stars/ObiDev/ObiDev-Studios?style=flat-square&color=3b82f6" alt="Stars"></a>
-  <a href="https://github.com/ObiDev/ObiDev-Studios/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ObiDev/ObiDev-Studios?style=flat-square&color=3b82f6" alt="License"></a>
-  <a href="https://obidev.fr"><img src="https://img.shields.io/badge/website-obidev.fr-1d1d1f?style=flat-square" alt="Website"></a>
-</p>
-
 ---
 
 ##  À propos
