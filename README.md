@@ -22,7 +22,7 @@
 ##  Fonctionnalités
 
 - **Thème clair/sombre** - Basculer instantanément entre les modes
-- ***Responsive 100%** - Optimisé mobile, tablette, desktop
+- **Responsive 100%** - Optimisé mobile, tablette, desktop
 - **Design clean** - Interface épurée et moderne
 - **Animations fluides** - Interactions smooth 
 - **Architecture modulaire** - Plugins facilement modifiable
