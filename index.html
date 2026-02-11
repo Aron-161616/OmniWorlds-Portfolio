@@ -269,6 +269,34 @@ Endstone est nouveau, on construit l'écosystème ensemble pour que la communaut
 </footer>
 
 
+
+<script>
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    const body = document.body;
+    function setTheme(theme) {
+        themeBtns.forEach(btn => btn.classList.remove('active'));
+        if (theme === 'light') {
+            body.classList.add('light-mode');
+            document.querySelector('.theme-btn[data-theme="light"]').classList.add('active');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.remove('light-mode');
+            document.querySelector('.theme-btn[data-theme="dark"]').classList.add('active');
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = btn.getAttribute('data-theme');
+            setTheme(theme);
+        });
+    });
+    const savedTheme = localStorage.getItem('theme') || 'dark'; 
+    setTheme(savedTheme);
+</script>
+
+
+
   
   <div class="plugin-modal-overlay" id="plugin-modal">
   <div class="plugin-modal">
