@@ -650,6 +650,14 @@ body {
 
 
 /* ===== FAQ SECTION ===== */
+.faq-section .section-title,
+.faq-section .section-subtitle {
+  text-align: center !important; 
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px; 
+}
+
 .faq-section {
   padding: 120px 0;
   background: transparent; 
