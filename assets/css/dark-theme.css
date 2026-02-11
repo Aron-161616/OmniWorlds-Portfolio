@@ -859,23 +859,21 @@ body {
 /* ===== MOBILE ===== */
 
 html {
+  overflow-x: hidden; 
   height: 100%;
-  overflow: hidden;
 }
 
 body {
-  height: 100vh;
-  overflow: auto;
+  min-height: 100vh; 
+  overflow-y: auto; 
   margin: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 @media (max-width: 768px) {
-  html, body {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 100vh !important;
+
+  .header, .navbar, .navbar-container {
+    display: flex !important; 
+    position: relative; 
   }
   
 
