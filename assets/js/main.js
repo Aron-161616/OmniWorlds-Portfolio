@@ -134,7 +134,7 @@ faqItems.forEach(item => {
 
 
 
-// === GESTION THÈME (AJOUT UNIQUEMENT) ===
+// === THÈME ===
 
 function setTheme(theme) {
     const stylesheet = document.getElementById('theme-stylesheet');
@@ -154,7 +154,6 @@ function setTheme(theme) {
     }
 }
 
-// Chargement du thème sauvegardé
 document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
