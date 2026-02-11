@@ -55,10 +55,11 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       
-      <div class="theme-toggle">
-<button class="theme-btn active" data-theme="dark">Dark</button>
-<button class="theme-btn" data-theme="light">Light</button>
-      </div>
+
+<div class="theme-toggle">
+    <button class="theme-btn" data-theme="dark">Dark</button>
+    <button class="theme-btn" data-theme="light">Light</button>
+</div>
     </div>
   </nav>
 </header>
@@ -269,34 +270,6 @@ Endstone est nouveau, on construit l'écosystème ensemble pour que la communaut
 </footer>
 
 
-
-<script>
-    const themeBtns = document.querySelectorAll('.theme-btn');
-    const body = document.body;
-    function setTheme(theme) {
-        themeBtns.forEach(btn => btn.classList.remove('active'));
-        if (theme === 'light') {
-            body.classList.add('light-mode');
-            document.querySelector('.theme-btn[data-theme="light"]').classList.add('active');
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.classList.remove('light-mode');
-            document.querySelector('.theme-btn[data-theme="dark"]').classList.add('active');
-            localStorage.setItem('theme', 'dark');
-        }
-    }
-    themeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const theme = btn.getAttribute('data-theme');
-            setTheme(theme);
-        });
-    });
-    const savedTheme = localStorage.getItem('theme') || 'dark'; 
-    setTheme(savedTheme);
-</script>
-
-
-
   
   <div class="plugin-modal-overlay" id="plugin-modal">
   <div class="plugin-modal">
@@ -335,6 +308,6 @@ Endstone est nouveau, on construit l'écosystème ensemble pour que la communaut
     </div>
   </div>
 </div>
-
+<script src="main.js"></script>
 </body>
 </html>
