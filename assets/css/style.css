@@ -1,4 +1,3 @@
-/* ===== RESET ===== */
 *,
 *::before,
 *::after {
@@ -11,19 +10,23 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ===== BASE ===== */
+
+
+
+/* ===== Fond ===== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #f9fafb;
   background:
     radial-gradient(circle at top, #111827 0%, #020617 55%);
-  background-attachment: fixed;     /* optionnel : léger effet parallax */
+  background-attachment: fixed;     
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 
-/* ===== BANNER ===== */
+
+/* ===== Bannière ===== */
 .announcement-banner {
   background-color: #43a2cc;
   color: #ffffff;
@@ -34,7 +37,10 @@ body {
   letter-spacing: 0.12em;
 }
 
-/* ===== HEADER / NAVBAR ===== */
+
+
+
+/* ===== NAVBAR ===== */
 .header {
   position: fixed;
   top: 48px;
@@ -68,7 +74,7 @@ body {
   box-shadow: 0 16px 40px rgba(2, 6, 23, 0.9);
 }
 
-/* LOGO */
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -87,7 +93,7 @@ body {
   color: #e0f2ff;
 }
 
-/* MENU */
+
 .navbar-menu {
   display: flex;
   list-style: none;
@@ -158,6 +164,9 @@ body {
 .theme-btn:hover:not(.active) {
   color: #e5e7eb;
 }
+
+
+
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -246,7 +255,7 @@ body {
   width: auto;
 }
 
-/* ===== CONTAINER UTILITAIRE ===== */
+
 .container {
   max-width: 1200px;
   width: 100%;
@@ -255,7 +264,7 @@ body {
 }
 
 
-/* RESPONSIVE */
+
 @media (max-width: 900px) {
   .hero {
     padding: 72px 0 80px;
@@ -334,8 +343,7 @@ body {
  } 
 
 
-
-
+/* ===== PRODUCTS SECTION ===== */
 .products-section {
   padding: 60px 0 140px;
   background: transparent;
@@ -362,8 +370,8 @@ body {
 .plugins-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;      /* centre chaque ligne */
-  gap: 32px 36px;               /* même espacement qu’avant */
+  justify-content: center;      
+  gap: 32px 36px;               
 }
 
 .plugin-icon {
@@ -397,11 +405,11 @@ body {
     flex-grow: 1;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* max 3 lignes */
+  -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
 }
 
-/* Badge Endstone */
+
 
 .plugin-badge {
   position: absolute;
@@ -415,7 +423,7 @@ body {
   border-radius: 999px;
   border: 1px solid rgba(56, 189, 248, 0.7);
 }
-/* état de base */
+
 .plugin-card {
   position: relative;
   width: 320px;
@@ -437,23 +445,18 @@ body {
               box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-/* état visible au scroll (JS) */
+
 .plugin-card.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* état au survol */
+
 .plugin-card:hover {
   box-shadow: 0 36px 80px rgba(15, 23, 42, 0.9);
   border-color: rgba(96, 165, 250, 0.6);
   transform: translateY(-6px);
 }
-
-
-
-
-/* Responsive déjà aligné avec ce que tu as */
 
 @media (max-width: 900px) {
   .plugins-grid {
@@ -467,18 +470,14 @@ body {
   }
 }
 
-
-/* Cartes cliquables */
 .plugin-card {
   cursor: pointer;
 }
 
-/* petit effet press au clic */
+
 .plugin-card:active {
   transform: translateY(-2px) scale(0.98);
 }
-
-/* ----- MODAL OVERLAY ----- */
 
 .plugin-modal-overlay {
   position: fixed;
@@ -498,8 +497,6 @@ body {
   pointer-events: auto;
 }
 
-/* ----- MODAL CARD ----- */
-
 .plugin-modal {
   width: min(520px, 92vw);
   background: #020617;
@@ -517,8 +514,6 @@ body {
   transform: translateY(0) scale(1);
   opacity: 1;
 }
-
-/* Bouton fermer */
 
 .plugin-modal-close {
   position: absolute;
@@ -544,7 +539,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Header du modal */
 
 .plugin-modal-header {
   display: flex;
@@ -578,7 +572,6 @@ body {
   border: 1px solid rgba(56, 189, 248, 0.7);
 }
 
-/* Corps */
 
 .plugin-modal-body {
   display: flex;
@@ -633,7 +626,6 @@ body {
   font-size: 14px;
 }
 
-/* Responsive modal */
 
 @media (max-width: 480px) {
   .plugin-modal {
