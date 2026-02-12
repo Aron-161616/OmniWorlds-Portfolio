@@ -22,10 +22,15 @@
 ##  Fonctionnalités
 
 - **Thème clair/sombre** - Basculer instantanément entre les modes
-- **Responsive 100%** - Optimisé mobile, tablette, desktop
 - **Design clean** - Interface épurée et moderne
 - **Animations fluides** - Interactions smooth 
 - **Architecture modulaire** - Plugins facilement modifiable
+
+---
+
+##  En Développement
+
+Le site est encore en développement, merci d'être indulgent et n'hésitez pas à nous faire parvenir vos critiques.
 
 ---
 
